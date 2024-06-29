@@ -1,7 +1,17 @@
 # Steps
-```
+```bash
 incus profile create frappe_base
-# paste in frappe_base.yaml as per [1]
+# 1. paste in frappe_base.yaml as per [1]
+# 2. add disk and network as per [2]
+# devices:
+#   eth0:
+#     name: eth0
+#     network: incusbr0
+#     type: nic
+#   root:
+#     path: /
+#     pool: default
+#     type: disk
 incus profile edit frappe_base
 # backup profile
 incus profile show frappe_base > frappe_base.profile

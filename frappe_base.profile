@@ -121,7 +121,15 @@ config:
     \n - python3-dev\n - python3-pip\n - redis-server\n - nodejs\n - yarn\n - xvfb\n
     - libfontconfig\n - wkhtmltopdf\n - curl\n - systemd-cron\n"
 description: ""
-devices: {}
+devices:
+  eth0:
+    name: eth0
+    network: incusbr0
+    type: nic
+  root:
+    path: /
+    pool: default
+    type: disk
 name: frappe_base
 used_by: []
 project: default
