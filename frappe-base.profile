@@ -1,6 +1,6 @@
 config:
   cloud-init.vendor-data: "#cloud-config\nssh_authorized_keys:\n  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC2e9G0sYa1yBe/w83JHH1GwDWgBF6Rcal+Fe0G8Kn8UQbhRJ5ytmeylJdg9M0rKN6V4tYUCEkHJ/A6g6dgQvGvHwJb9cUP3b/AwvVNdpd0xRYBpa6feeemfB/erCwEZmOOP/nIofRCZE9+v61o1hNy6oJkS19KCS3vwHtsEL1kXtXv2ZUr2EYlQJB3L+P83lAWqIDw0SSKjE6pRr88eexAo1da/dasrHa38YgQesSiwkO1ep4/6UtC0WnsmfZUNjWiqG6wARlsXk6w+k2XrgSmGLABnrnNJf3gAS1ghPUzx8HxPi/WvMjzWC8kt8o57PvtI97c4fAnB5ZG6Nc49Jiy8uLlBjtXkcOMDtiVlhKLU+8o/rWlIzXGKTfuZWdhbsE+07wheuna2zmC5nZjQ33Qo/9TGNFhfGS31JwNKJ4Re8x0Mm4u2gBD44OtRTrDSx2PpmSNQ+t60F/IGxyAx5s8+gkORj86IkTUBmyoNQsYNBbXqenoSu6pEMs1sCcvRC0=
-    tej@t440p\nsources:\n  ignored1:\n    source: \"deb https://dl.yarnpkg.com/debian/
+    tej@t440p\nsources:\n  yarn:\n    source: \"deb https://dl.yarnpkg.com/debian/
     stable main\"\n    key:\n      -----BEGIN PGP PUBLIC KEY BLOCK-----\n\n      mQINBFf0j5oBEADS6cItqCbf4lOLICohq2aHqM5I1jsz3DC4ddIU5ONbKXP1t0wk\n
     \     FEUPRzd6m80cTo7Q02Bw7enh4J6HvM5XVBSSGKENP6XAsiOZnY9nkXlcQAPFRnCn\n      CjEfoOPZ0cBKjn2IpIXXcC+7xh4p1yruBpOsCbT6BuzA+Nm9j4cpRjdRdWSSmdID\n
     \     TyMZClmYm/NIfCPduYvNZxZXhW3QYeieP7HIonhZSHVu/jauEUyHLVsieUIvAOJI\n      cXYpwLlrw0yy4flHe1ORJzuA7EZ4eOWCuKf1PgowEnVSS7Qp7lksCuljtfXgWelB\n
