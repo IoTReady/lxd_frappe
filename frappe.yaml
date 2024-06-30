@@ -62,12 +62,12 @@ devices:
     type: nic
   root:
     path: /
-    pool: default
+    pool: zfspool
     type: disk
   home:
     path: /home
-    pool: default
     source: home-disk
+    pool: zfspool
     type: disk
 name: frappe
 used_by: []

@@ -53,7 +53,7 @@ devices:
     type: nic
   root:
     path: /
-    pool: default
+    pool: zfspool
     type: disk
 name: frappe-base
 used_by: []

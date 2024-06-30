@@ -65,12 +65,17 @@ devices:
     type: nic
   root:
     path: /
-    pool: default
+    pool: zfspool
     type: disk
   home:
     path: /home
-    pool: default
     source: home-disk
+    pool: zfspool
+    type: disk
+  var:
+    path: /var
+    source: var-disk
+    pool: zfspool
     type: disk
 name: frappe-mariadb
 used_by: []
