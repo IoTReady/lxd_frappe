@@ -27,6 +27,10 @@ config:
     # package version will be installed.
     packages:
      - git 
+     - tmux
+     - htop
+     - nload
+     - iotop
      - python3-dev
      - python3-pip
      - python3-venv
