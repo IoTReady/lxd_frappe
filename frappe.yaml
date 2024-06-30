@@ -62,7 +62,7 @@ devices:
     type: nic
   root:
     path: /
-    pool: zfspool
+    pool: default
     type: disk
   home:
     path: /home

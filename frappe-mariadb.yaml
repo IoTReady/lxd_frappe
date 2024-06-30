@@ -65,16 +65,16 @@ devices:
     type: nic
   root:
     path: /
-    pool: zfspool
+    pool: default
     type: disk
   home:
     path: /home
     source: home-disk
     pool: zfspool
     type: disk
-  var:
-    path: /var
-    source: var-disk
+  mariadb:
+    path: /var/lib/mysql
+    source: mariadb-disk
     pool: zfspool
     type: disk
 name: frappe-mariadb
