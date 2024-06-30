@@ -44,6 +44,8 @@ config:
      - systemd-cron
      - mariadb-server
      - mariadb-client
+     - nginx
+     - supervisor
     users:
       - name: frappe
         shell: /bin/bash
@@ -54,10 +56,22 @@ config:
       - [ pip3, install, frappe-bench, --break-system-packages ]
       - [ cd, /home/frappe ]
       - [ bench, init, frappe-bench, --version, version-15 ] 
+      - [ cd, /home/frappe/frappe-bench ]
+      - [ bench, setup, supervisor ] 
+      - [ ln, -s, /home/frappe/frappe-bench/config/supervisor.conf, /etc/supervisor/conf.d/frappe-bench.conf ]
+      - [ bench, config, dns_multitenant, on ]
+      - [ bench, setup, nginx ] 
+      - [ ln, -s, /home/frappe/frappe-bench/config/nginx.conf, /etc/nginx/conf.d/frappe-bench.conf ]
+      - sed -i '/http {/a \\n    log_format  main  '\''$remote_addr - $remote_user [$time_local] "$request" $status $body_bytes_sent "$http_referer" "$http_user_agent" "$http_x_forwarded_for"'\'';' /etc/nginx/nginx.conf
       - [ chown, -R, frappe:frappe, /home/frappe ]
+      - [ systemctl, enable, supervisor ]
+      - [ systemctl, start, supervisor ]
+      - [ supervisorctl, reload ]
+      - [ systemctl, enable, nginx ]
+      - [ systemctl, restart, nginx ]
       - printf '[mysqld]\ncharacter-set-client-handshake = FALSE\ncharacter-set-server = utf8mb4\ncollation-server = utf8mb4_unicode_ci\n\n[mysql]\ndefault-character-set = utf8mb4\n' > /etc/mysql/conf.d/frappe.conf
 
-description: "Frappe MariaDB"
+description: "Frappe - Full with MariaDB, nginx and supervisor"
 devices: 
   eth0:
     name: eth0
@@ -77,6 +91,6 @@ devices:
     source: mariadb-disk
     pool: zfspool
     type: disk
-name: frappe-mariadb
+name: frappe-full
 used_by: []
 project: default
