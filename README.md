@@ -1,4 +1,8 @@
 # Notes
+- [Install incus](https://linuxcontainers.org/incus/docs/main/installing/)
+- [Initialise incus](https://linuxcontainers.org/incus/docs/main/howto/initialize/)
+    - `incus admin init`
+    - This sets up all the defaults needed to run the images (without zfs)
 
 # Images
 
