@@ -35,8 +35,10 @@ incus profile edit frappe < frappe.yaml
 ```bash
 incus profile create frappe-mariadb
 # To restore backup
-incus profile edit frappe-mariadb < frappe-mariadb.yaml
+incus profile edit frappe-mariadb < frappe-mariadb-nozfs.yaml
 ./launch_frappe-mariadb.sh
+./attach_frappe-mariadb.sh
+cloud-init status --long
 mysql_secure_installation
 ```
 
