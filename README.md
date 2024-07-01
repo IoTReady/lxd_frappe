@@ -39,6 +39,8 @@ incus profile edit frappe-mariadb < frappe-mariadb-nozfs.yaml
 ./launch_frappe-mariadb.sh
 ./attach_frappe-mariadb.sh
 cloud-init status --long
+# Set root password for mariadb:
+# Ensure you answer No when prompted for Unix socket auth
 mysql_secure_installation
 ```
 
