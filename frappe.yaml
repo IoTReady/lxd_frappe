@@ -1,8 +1,6 @@
 config:
   cloud-init.user-data: |
     #cloud-config
-    ssh_authorized_keys:
-      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC2e9G0sYa1yBe/w83JHH1GwDWgBF6Rcal+Fe0G8Kn8UQbhRJ5ytmeylJdg9M0rKN6V4tYUCEkHJ/A6g6dgQvGvHwJb9cUP3b/AwvVNdpd0xRYBpa6feeemfB/erCwEZmOOP/nIofRCZE9+v61o1hNy6oJkS19KCS3vwHtsEL1kXtXv2ZUr2EYlQJB3L+P83lAWqIDw0SSKjE6pRr88eexAo1da/dasrHa38YgQesSiwkO1ep4/6UtC0WnsmfZUNjWiqG6wARlsXk6w+k2XrgSmGLABnrnNJf3gAS1ghPUzx8HxPi/WvMjzWC8kt8o57PvtI97c4fAnB5ZG6Nc49Jiy8uLlBjtXkcOMDtiVlhKLU+8o/rWlIzXGKTfuZWdhbsE+07wheuna2zmC5nZjQ33Qo/9TGNFhfGS31JwNKJ4Re8x0Mm4u2gBD44OtRTrDSx2PpmSNQ+t60F/IGxyAx5s8+gkORj86IkTUBmyoNQsYNBbXqenoSu6pEMs1sCcvRC0= tej@t440p
     apt:
       sources:
         yarn:
@@ -46,8 +44,6 @@ config:
       - name: frappe
         shell: /bin/bash
         sudo: ALL=(ALL) NOPASSWD:ALL
-        ssh_authorized_keys:
-          - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC2e9G0sYa1yBe/w83JHH1GwDWgBF6Rcal+Fe0G8Kn8UQbhRJ5ytmeylJdg9M0rKN6V4tYUCEkHJ/A6g6dgQvGvHwJb9cUP3b/AwvVNdpd0xRYBpa6feeemfB/erCwEZmOOP/nIofRCZE9+v61o1hNy6oJkS19KCS3vwHtsEL1kXtXv2ZUr2EYlQJB3L+P83lAWqIDw0SSKjE6pRr88eexAo1da/dasrHa38YgQesSiwkO1ep4/6UtC0WnsmfZUNjWiqG6wARlsXk6w+k2XrgSmGLABnrnNJf3gAS1ghPUzx8HxPi/WvMjzWC8kt8o57PvtI97c4fAnB5ZG6Nc49Jiy8uLlBjtXkcOMDtiVlhKLU+8o/rWlIzXGKTfuZWdhbsE+07wheuna2zmC5nZjQ33Qo/9TGNFhfGS31JwNKJ4Re8x0Mm4u2gBD44OtRTrDSx2PpmSNQ+t60F/IGxyAx5s8+gkORj86IkTUBmyoNQsYNBbXqenoSu6pEMs1sCcvRC0= tej@t440p
     runcmd:
       - [ pip3, install, frappe-bench, --break-system-packages ]
       - [ cd, /home/frappe ]
